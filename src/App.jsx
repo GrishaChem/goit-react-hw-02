@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Desc from "./components/description/Desc.jsx";
 import Options from "./components/options/Options.jsx";
-import Feedback from "./components/feedback/Feedback.jsx";
+import Feedback from "./components/feedback/feedback.jsx";
 import Not from "./components/not/not.jsx";
 
 const App = () => {
