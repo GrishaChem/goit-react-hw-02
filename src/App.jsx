@@ -5,11 +5,16 @@ import Feedback from "./components/feedback/Feedback.jsx";
 import Not from "./components/not/not.jsx";
 
 const App = () => {
-  const [feedback, setFeedBack] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  const [feedback, setFeedback] = useState(() => {
+    const savedFeedback = localStorage.getItem("feedback");
+    return savedFeedback
+      ? JSON.parse(savedFeedback)
+      : { good: 0, neutral: 0, bad: 0 };
   });
+
+  useEffect(() => {
+    localStorage.setItem("feedback", JSON.stringify(feedback));
+  }, [feedback]);
 
   const totalFeedback = feedback.good + feedback.bad + feedback.neutral;
   const posFB = Math.round((feedback.good / totalFeedback) * 100);
