@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Desc from "./components/description/Desc";
-import Options from "./components/options/Options";
-import Feedback from "./components/feedback/feedback";
-import Not from "./components/not/not";
+import Desc from "./components/description/Desc.jsx";
+import Options from "./components/options/Options.jsx";
+import Feedback from "./components/feedback/Feedback.jsx";
+import Not from "./components/not/not.jsx";
 
 const App = () => {
   const [feedback, setFeedBack] = useState({
