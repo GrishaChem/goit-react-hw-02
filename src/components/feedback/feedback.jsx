@@ -1,5 +1,5 @@
 import React from "react";
-
+import s from "../feedback/FeedBack.module.css";
 const Feedback = ({ FB, posFB }) => {
   return (
     <div>
