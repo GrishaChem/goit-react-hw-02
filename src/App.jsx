@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Desc from "./components/description/desc.jsx";
-import Options from "./components/options/Options.jsx";
+import Options from "./components/options/options.jsx";
 import Feedback from "./components/feedback/feedback.jsx";
 import Not from "./components/not/not.jsx";
 
