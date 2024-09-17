@@ -16,6 +16,14 @@ const App = () => {
     localStorage.setItem("feedback", JSON.stringify(feedback));
   }, [feedback]);
 
+  const resetFeedback = () => {
+    setFeedBack({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  };
+
   const totalFeedback = feedback.good + feedback.bad + feedback.neutral;
   const posFB = Math.round((feedback.good / totalFeedback) * 100);
   const updateFeedback = (feedbackType) => {
@@ -28,8 +36,16 @@ const App = () => {
   return (
     <>
       <Desc />
-      <Options FB={feedback} updateFeedback={updateFeedback} />
-      {totalFeedback > 0 ? <Feedback posFB={posFB} FB={feedback} /> : <Not />}
+      <Options
+        resetFeedback={resetFeedback}
+        FB={totalFeedback}
+        updateFeedback={updateFeedback}
+      />
+      {totalFeedback > 0 ? (
+        <Feedback totalFeedback={totalFeedback} posFB={posFB} FB={feedback} />
+      ) : (
+        <Not />
+      )}
     </>
   );
 };
